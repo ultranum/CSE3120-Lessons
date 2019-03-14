@@ -14,3 +14,25 @@ A ___Class___ is a model of an object. Classes contain the _attributes_ and _beh
         - the student class has a method, take notes.
         
 An ___Object___ is a unique set of data and functions _instantiated_ from a class. An object accesses attributes and methods using _dot notation_, which identifies the object, then calls the method within it.
+
+## Why OOP?
+1. __Abstraction__ is the process of setting the level of detail and complexity to what is appropriate for the given task.
+    - Eg. A student has many properties (i.e. hair color, height, etc), but only ones relevant to the task, such as calculating an average is needed (i.e. ID, Course, Grades, etc)
+
+## Unified Modeling Language
+A standardized modeling language that has the same notational system when describing data management and software design. This language is programming agnostic and does not require a programming background to utilize. It is composed of three diagram types: structure, behavior, and interactions.
+
+NOTE: While software developers use all three types, we will only focus on structure.
+
+A _Class Diagram_ contains the name of the class, the attributes, and the methods.
+
+| Bank Account | |
+| --- | --- |
+| _Attributes/Methods_ | _Value_ |
+| - | - |
+| AccountNo | Int |
+| Balance | Float |
+| - | - |
+| withdraw(val) | Float |
+| deposit(val) | Float |
+| getBalance() | Float |

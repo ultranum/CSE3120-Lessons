@@ -20,6 +20,55 @@ An ___Object___ is a unique set of data and functions _instantiated_ from a clas
     - Eg. A student has many properties (i.e. hair color, height, etc), but only ones relevant to the task, such as calculating an average is needed (i.e. ID, Course, Grades, etc)
 
 2. __Aggregation and Composition__ is the process of creating a complex object by collecting several other objects. Aggregates have no relation between the collected objects. (I.e, the cards in a player's hand.) Whereas, objects in a composite are interacting to create a more complex object. The removal of an object in a composite can compromise the functionality of the composite object. (I.e, A bicycle is composed of a frame, bike chain, pedals, wheels, etc.).
+
+3. __Polymorphism__ is the ability to instantiate objects with different values for class attributes.
+    * For Example, a Honda Civic is made from the Civic class, but can have different exterior color attributes and interior finish materials attributes.
+    * The advantage of polymorphism is that the program can construct many similar objects in less lines of code.
+    
+4. __Encapsulation__ is the process of protecting or hiding data and code so that other parts of the program can only interact with the data in pre-programmed pathways. Often times, these interactions are aggregated into an interface. The interface is a collection of setter and getter methods. (Sometimes called modifier and accessor methods.) These methods are the primary pathway to modify or retrieve object attributes.
+    * For Example. a protective case encapsulates the components of a computer and the only interaction is through input and output ports.
+    * It is important to only create setter and getter methods for attributes that are needed outside of the object.
+    
+
+'''
+class myClass:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.pos = (self.x, self.y)
+    
+    // Setter Methods
+    def setX(self, x):
+        self.x = x
+        self.pos = (self.x, self.y)
+        
+    def setY(self, y):
+        self.y = y
+        self.pos = (self.x, self.y)
+    
+    // Getter Methods
+    def getPos(self):
+        return self.pos
+'''
+5. __Inheritance__ is when one class references and builds upon another class. The class inherits all attributes and methods of the referenced class, which is called the parent class. The class that does the referencing is called the child class or subclass
+
+'''
+python
+
+class parent:
+    def __init__(self, name):
+        self.name = name
+        
+   def aMethod(self):
+        pass
+        
+class child(parent, object):
+    def __init__(self, name, age):
+        parent.__init__(self,name)
+        self.age = age    
+'''
+Inheritance reduces the amount of copied attributes and methods between classes. Python allows multiple inheritance, but many languages only allow one class inheritance.
+
 ## Unified Modeling Language
 A standardized modeling language that has the same notational system when describing data management and software design. This language is programming agnostic and does not require a programming background to utilize. It is composed of three diagram types: structure, behavior, and interactions.
 

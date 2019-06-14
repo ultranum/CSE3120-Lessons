@@ -44,8 +44,35 @@ class deck:
 
     def getRandCard(self):
         from random import randrange
-        return self.cards[randrange(len(self.cards))]
+        return self.cards.pop(randrange(len(self.cards)))
 
+    def getDeckSize(self):
+        return (len(self.cards))
+
+class player:
+    def __init__(self, name):
+        self.name = name
+        self.hand = []
+
+    def __str__(self):
+        return self.name
+
+    def addCard(self, obj): #Setter Method
+        self.hand.append(obj)
+
+    def getHand(self):
+        tempLi = []
+        for i in range(len(self.hand)):
+            tempLi.append(str(self.hand[i]))
+        strHand = ', '.join(tempLi)
+        return self.name + "'s Hand contains the following cards: " + strHand
 myDeck = deck()
-card = myDeck.getRandCard()
-print(card)
+player1 = player('num2')
+
+# Interface
+for i in range(52):
+    player1.addCard(myDeck.getRandCard())
+
+print(player1)
+print(myDeck.getDeckSize())
+print(player1.getHand())
